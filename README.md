@@ -4,15 +4,17 @@
     - Run App: npm run dev
     - Run test: npm run test
 
-**Libraries**
-Framework: Next.js with TypeScript
-Testing: Vitest
-Component Library: Shadcn (Radix base and Tailwind components)
-Charts: Recharts
-Forms and Validation: React Hook Form
+## Libraries
 
-**Notes**
-approximately 8 hours to this project over the course of 3 days, my inital approach was to understand the base requirements and and identify any potential issues.
+- Framework: Next.js with TypeScript
+- Testing: Vitest
+- Component Library: Shadcn (Radix base and Tailwind components)
+- Charts: Recharts
+- Forms and Validation: React Hook Form
+
+## Notes
+
+I spent approximately 7 hours to this project over the course of 3 days, my inital approach was to understand the base requirements and and identify any potential issues.
 
 Initially, I implemented the interest calculation for both projected and desired pensions. However, I realized that my calculations were incorrect as I focused on 'simple interest' instead of 'compound interest'.
 
@@ -49,14 +51,15 @@ export const projectedPensionWithInterest = ({
 };
 ```
 
-**Test**
+## Test
+
 Due to the limited time frame, I used TypeScript to ensure type safety for all data points and opted to test only the business logic and pure functions.
 
-**Improvements**
+## Improvements
 
-Charts: Using a single chart could enhance the user experience by allowing the comparison of multiple data points simultaneously.
+- Charts: Using a single chart could enhance the user experience by allowing the comparison of projected, desired and after retirment pension pot.
 
-Responsiveness: Improve the responsiveness of the charts.
+- Responsiveness: Improve the responsiveness of the charts.
 
-Features: Add the ability to manage multiple or existing pension pots.
-Testing: Implement unit tests for the UI elements.
+- Features: Add the ability to manage multiple or existing pension pots.
+- Testing: Implement unit tests for the UI elements.
