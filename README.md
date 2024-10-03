@@ -61,5 +61,6 @@ Due to the limited time frame, I used TypeScript to ensure type safety for all d
 
 - Responsiveness: Improve the responsiveness of the charts.
 
-- Features: Add the ability to manage multiple or existing pension pots.
+- Features: Add the ability to add multiple or existing pension pots.
 - Testing: Implement unit tests for the UI elements.
+- Create a function to dynamically generate required form fields.

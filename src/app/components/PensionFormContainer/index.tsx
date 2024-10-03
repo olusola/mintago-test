@@ -19,6 +19,8 @@ type PensionFormProps = {
   handlePensionFormValues: (formValues: PensionFormValuesTypes) => void;
 };
 
+const noSpinners = '[&::-webkit-inner-spin-button]:appearance-none';
+
 const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
   const formSchema = z.object({
     employerContribution: z.coerce
@@ -50,6 +52,12 @@ const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      employerContribution: 0,
+      retirementAge: 0,
+      desiredIncomePerYear: 0,
+      personalContribution: 0,
+    },
   });
 
   const onSubmitForm = (values: z.infer<typeof formSchema>) =>
@@ -69,7 +77,15 @@ const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
               <FormItem>
                 <FormLabel>Desired Retirement Income Per Year(£)</FormLabel>
                 <FormControl>
-                  <Input min={0} type="number" {...field} />
+                  <Input
+                    onFocus={(e) => {
+                      e.target.value = '';
+                    }}
+                    min={0}
+                    type="number"
+                    {...field}
+                    className={noSpinners}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -84,7 +100,15 @@ const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
               <FormItem>
                 <FormLabel>Monthly Personal contribution(£)</FormLabel>
                 <FormControl>
-                  <Input min={0} {...field} type="number" />
+                  <Input
+                    onFocus={(e) => {
+                      e.target.value = '';
+                    }}
+                    min={0}
+                    {...field}
+                    type="number"
+                    className={noSpinners}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,7 +122,15 @@ const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
               <FormItem>
                 <FormLabel>Monthly Employer Contribution (£)</FormLabel>
                 <FormControl>
-                  <Input min={0} {...field} type="number" />
+                  <Input
+                    onFocus={(e) => {
+                      e.target.value = '';
+                    }}
+                    min={0}
+                    {...field}
+                    type="number"
+                    className={noSpinners}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -112,7 +144,15 @@ const PensionForm = ({ handlePensionFormValues }: PensionFormProps) => {
               <FormItem>
                 <FormLabel>Retirement Age</FormLabel>
                 <FormControl>
-                  <Input min={0} {...field} type="number" />
+                  <Input
+                    onFocus={(e) => {
+                      e.target.value = '';
+                    }}
+                    min={0}
+                    {...field}
+                    type="number"
+                    className={noSpinners}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
